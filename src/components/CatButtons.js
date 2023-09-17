@@ -1,15 +1,20 @@
+import {
+  Link,
+  useParams
+} from "react-router-dom";
+
 export default function CatButtons({setCurrentCategory,currentCategory,categories}) {
  
  return (
   <>
-    <button key={0} onClick={()=>(setCurrentCategory(''))} type="button" className={`btn me-2 mb-3 ${currentCategory==''?'btn-success':'btn-light'}`} >
+    <Link to="/" key={0} onClick={()=>(setCurrentCategory(''))}  className={`btn me-2 mb-3 ${currentCategory==''?'btn-success':'btn-light'}`} >
       All
-    </button>
+    </Link>
   {categories.map(function(category) {
     return (
-      <button key={category} onClick={()=>(setCurrentCategory(category))} type="button" className={`btn me-2 mb-3 ${currentCategory==category?'btn-success':'btn-light'}`} >
+      <Link to="/" key={category} onClick={()=>(setCurrentCategory(category))}  className={`btn me-2 mb-3 ${currentCategory==category?'btn-success':'btn-light'}`} >
       {category}
-    </button>
+    </Link>
     )
   })}
  </> 
